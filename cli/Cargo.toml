@@ -10,6 +10,14 @@ license.workspace = true
 repository.workspace = true
 description = "Provides the deno executable"
 
+
+[lib]
+name = "deno"
+crate-type = ["cdylib", "lib"]
+path = "lib.rs"
+bench = false
+
+
 [[bin]]
 name = "deno"
 path = "main.rs"
