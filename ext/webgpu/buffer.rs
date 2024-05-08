@@ -48,6 +48,7 @@ pub fn op_webgpu_create_buffer(
   usage: u32,
   mapped_at_creation: bool,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -79,6 +80,7 @@ pub async fn op_webgpu_buffer_get_map_async(
   #[number] offset: u64,
   #[number] size: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let (sender, receiver) = oneshot::channel::<BufferAccessResult>();
 
   let device;
@@ -153,6 +155,7 @@ pub fn op_webgpu_buffer_get_mapped_range(
   #[number] size: Option<u64>,
   #[buffer] buf: &mut [u8],
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let buffer_resource = state.resource_table.get::<WebGpuBuffer>(buffer_rid)?;
   let buffer = buffer_resource.1;
@@ -186,6 +189,7 @@ pub fn op_webgpu_buffer_unmap(
   #[smi] mapped_rid: ResourceId,
   #[buffer] buf: Option<&[u8]>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let mapped_resource = state
     .resource_table
     .take::<WebGpuBufferMapped>(mapped_rid)?;

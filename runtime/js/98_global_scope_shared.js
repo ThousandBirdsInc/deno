@@ -32,7 +32,7 @@ import { DOMException } from "ext:deno_web/01_dom_exception.js";
 import * as abortSignal from "ext:deno_web/03_abort_signal.js";
 import * as imageData from "ext:deno_web/16_image_data.js";
 import { loadWebGPU } from "ext:deno_webgpu/00_init.js";
-import * as webgpuSurface from "ext:deno_webgpu/02_surface.js";
+// import * as webgpuSurface from "ext:deno_webgpu/02_surface.js";
 import { unstableIds } from "ext:runtime/90_deno_ns.js";
 
 const loadImage = core.createLazyLoader("ext:deno_canvas/01_image.js");
@@ -187,7 +187,7 @@ unstableForWindowOrWorkerGlobalScope[unstableIds.webgpu] = {
   GPUError: core.propNonEnumerableLazyLoaded((webgpu) => webgpu.GPUError, loadWebGPU),
   GPUValidationError: core.propNonEnumerableLazyLoaded((webgpu) => webgpu.GPUValidationError, loadWebGPU),
   GPUOutOfMemoryError: core.propNonEnumerableLazyLoaded((webgpu) => webgpu.GPUOutOfMemoryError, loadWebGPU),
-  GPUCanvasContext: core.propNonEnumerable(webgpuSurface.GPUCanvasContext),
+  // GPUCanvasContext: core.propNonEnumerable(webgpuSurface.GPUCanvasContext),
 };
 
 export { unstableForWindowOrWorkerGlobalScope, windowOrWorkerGlobalScope };

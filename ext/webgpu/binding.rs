@@ -188,6 +188,7 @@ pub fn op_webgpu_create_bind_group_layout(
   #[string] label: Cow<str>,
   #[serde] entries: Vec<GpuBindGroupLayoutEntry>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -227,6 +228,7 @@ pub fn op_webgpu_create_pipeline_layout(
   #[string] label: Cow<str>,
   #[serde] bind_group_layouts: Vec<u32>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -274,6 +276,7 @@ pub fn op_webgpu_create_bind_group(
   #[smi] layout: ResourceId,
   #[serde] entries: Vec<GpuBindGroupEntry>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table

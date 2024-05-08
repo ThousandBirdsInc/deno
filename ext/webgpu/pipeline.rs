@@ -90,6 +90,7 @@ pub fn op_webgpu_create_compute_pipeline(
   #[serde] layout: GPUPipelineLayoutOrGPUAutoLayoutMode,
   #[serde] compute: GpuProgrammableStage,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -157,6 +158,7 @@ pub fn op_webgpu_compute_pipeline_get_bind_group_layout(
   #[smi] compute_pipeline_rid: ResourceId,
   index: u32,
 ) -> Result<PipelineLayout, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let compute_pipeline_resource = state
     .resource_table
@@ -335,6 +337,7 @@ pub fn op_webgpu_create_render_pipeline(
   state: &mut OpState,
   #[serde] args: CreateRenderPipelineArgs,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -428,6 +431,7 @@ pub fn op_webgpu_render_pipeline_get_bind_group_layout(
   #[smi] render_pipeline_rid: ResourceId,
   index: u32,
 ) -> Result<PipelineLayout, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let render_pipeline_resource = state
     .resource_table

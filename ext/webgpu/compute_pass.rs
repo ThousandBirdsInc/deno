@@ -26,6 +26,7 @@ pub fn op_webgpu_compute_pass_set_pipeline(
   #[smi] compute_pass_rid: ResourceId,
   #[smi] pipeline: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let compute_pipeline_resource =
     state
       .resource_table
@@ -51,6 +52,7 @@ pub fn op_webgpu_compute_pass_dispatch_workgroups(
   y: u32,
   z: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let compute_pass_resource = state
     .resource_table
     .get::<WebGpuComputePass>(compute_pass_rid)?;
@@ -73,6 +75,7 @@ pub fn op_webgpu_compute_pass_dispatch_workgroups_indirect(
   #[smi] indirect_buffer: ResourceId,
   #[number] indirect_offset: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(indirect_buffer)?;
@@ -96,6 +99,7 @@ pub fn op_webgpu_compute_pass_end(
   #[smi] command_encoder_rid: ResourceId,
   #[smi] compute_pass_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let command_encoder_resource = state
     .resource_table
     .get::<super::command_encoder::WebGpuCommandEncoder>(
@@ -125,6 +129,7 @@ pub fn op_webgpu_compute_pass_set_bind_group(
   #[number] dynamic_offsets_data_start: usize,
   #[number] dynamic_offsets_data_length: usize,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let bind_group_resource =
     state
       .resource_table
@@ -164,6 +169,7 @@ pub fn op_webgpu_compute_pass_push_debug_group(
   #[smi] compute_pass_rid: ResourceId,
   #[string] group_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let compute_pass_resource = state
     .resource_table
     .get::<WebGpuComputePass>(compute_pass_rid)?;
@@ -188,6 +194,7 @@ pub fn op_webgpu_compute_pass_pop_debug_group(
   state: &mut OpState,
   #[smi] compute_pass_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let compute_pass_resource = state
     .resource_table
     .get::<WebGpuComputePass>(compute_pass_rid)?;
@@ -206,6 +213,7 @@ pub fn op_webgpu_compute_pass_insert_debug_marker(
   #[smi] compute_pass_rid: ResourceId,
   #[string] marker_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let compute_pass_resource = state
     .resource_table
     .get::<WebGpuComputePass>(compute_pass_rid)?;

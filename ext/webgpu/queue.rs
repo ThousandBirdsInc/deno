@@ -19,6 +19,7 @@ pub fn op_webgpu_queue_submit(
   #[smi] queue_rid: ResourceId,
   #[serde] command_buffers: Vec<ResourceId>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let queue_resource = state.resource_table.get::<WebGpuQueue>(queue_rid)?;
   let queue = queue_resource.1;
@@ -73,6 +74,7 @@ pub fn op_webgpu_write_buffer(
   #[number] size: Option<usize>,
   #[buffer] buf: &[u8],
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let buffer_resource = state
     .resource_table
@@ -106,6 +108,7 @@ pub fn op_webgpu_write_texture(
   #[serde] size: wgpu_types::Extent3d,
   #[buffer] buf: &[u8],
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let texture_resource = state
     .resource_table

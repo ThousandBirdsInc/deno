@@ -42,30 +42,32 @@ pub fn op_webgpu_surface_configure(
   state: &mut OpState,
   #[serde] args: SurfaceConfigureArgs,
 ) -> Result<WebGpuResult, AnyError> {
-  let instance = state.borrow::<super::Instance>();
-  let device_resource = state
-    .resource_table
-    .get::<super::WebGpuDevice>(args.device_rid)?;
-  let device = device_resource.1;
-  let surface_resource = state
-    .resource_table
-    .get::<WebGpuSurface>(args.surface_rid)?;
-  let surface = surface_resource.1;
+  // let instance = state.borrow::<super::Instance>();
+  // let device_resource = state
+  //   .resource_table
+  //   .get::<super::WebGpuDevice>(args.device_rid)?;
+  // let device = device_resource.1;
+  // let surface_resource = state
+  //   .resource_table
+  //   .get::<WebGpuSurface>(args.surface_rid)?;
+  // let surface = surface_resource.1;
+  //
+  // let conf = wgpu_types::SurfaceConfiguration::<Vec<wgpu_types::TextureFormat>> {
+  //   usage: wgpu_types::TextureUsages::from_bits_truncate(args.usage),
+  //   format: args.format,
+  //   width: args.width,
+  //   height: args.height,
+  //   present_mode: args.present_mode.unwrap_or_default(),
+  //   alpha_mode: args.alpha_mode,
+  //   view_formats: args.view_formats,
+  // };
+  //
+  // let err =
+  //   gfx_select!(device => instance.surface_configure(surface, device, &conf));
 
-  let conf = wgpu_types::SurfaceConfiguration::<Vec<wgpu_types::TextureFormat>> {
-    usage: wgpu_types::TextureUsages::from_bits_truncate(args.usage),
-    format: args.format,
-    width: args.width,
-    height: args.height,
-    present_mode: args.present_mode.unwrap_or_default(),
-    alpha_mode: args.alpha_mode,
-    view_formats: args.view_formats,
-  };
-
-  let err =
-    gfx_select!(device => instance.surface_configure(surface, device, &conf));
-
-  Ok(WebGpuResult::maybe_err(err))
+  unreachable!("unreach");
+  // Err("err".to_string())
+  // Ok(WebGpuResult::maybe_err(err))
 }
 
 #[op2]
@@ -75,6 +77,7 @@ pub fn op_webgpu_surface_get_current_texture(
   #[smi] device_rid: ResourceId,
   #[smi] surface_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -107,6 +110,7 @@ pub fn op_webgpu_surface_present(
   #[smi] device_rid: ResourceId,
   #[smi] surface_rid: ResourceId,
 ) -> Result<(), AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table

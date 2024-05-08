@@ -39,6 +39,7 @@ pub fn op_webgpu_render_pass_set_viewport(
   state: &mut OpState,
   #[serde] args: RenderPassSetViewportArgs,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(args.render_pass_rid)?;
@@ -66,6 +67,7 @@ pub fn op_webgpu_render_pass_set_scissor_rect(
   width: u32,
   height: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -88,6 +90,7 @@ pub fn op_webgpu_render_pass_set_blend_constant(
   #[smi] render_pass_rid: ResourceId,
   #[serde] color: wgpu_types::Color,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -107,6 +110,7 @@ pub fn op_webgpu_render_pass_set_stencil_reference(
   #[smi] render_pass_rid: ResourceId,
   reference: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -126,6 +130,7 @@ pub fn op_webgpu_render_pass_begin_occlusion_query(
   #[smi] render_pass_rid: ResourceId,
   query_index: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -144,6 +149,7 @@ pub fn op_webgpu_render_pass_end_occlusion_query(
   state: &mut OpState,
   #[smi] render_pass_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -162,6 +168,7 @@ pub fn op_webgpu_render_pass_execute_bundles(
   #[smi] render_pass_rid: ResourceId,
   #[serde] bundles: Vec<u32>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let bundles = bundles
     .iter()
     .map(|rid| {
@@ -197,6 +204,7 @@ pub fn op_webgpu_render_pass_end(
   #[smi] command_encoder_rid: ResourceId,
   #[smi] render_pass_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let command_encoder_resource = state
     .resource_table
     .get::<super::command_encoder::WebGpuCommandEncoder>(
@@ -223,6 +231,7 @@ pub fn op_webgpu_render_pass_set_bind_group(
   #[number] dynamic_offsets_data_start: usize,
   #[number] dynamic_offsets_data_length: usize,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let bind_group_resource =
     state
       .resource_table
@@ -262,6 +271,7 @@ pub fn op_webgpu_render_pass_push_debug_group(
   #[smi] render_pass_rid: ResourceId,
   #[string] group_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -286,6 +296,7 @@ pub fn op_webgpu_render_pass_pop_debug_group(
   state: &mut OpState,
   #[smi] render_pass_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -304,6 +315,7 @@ pub fn op_webgpu_render_pass_insert_debug_marker(
   #[smi] render_pass_rid: ResourceId,
   #[string] marker_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -329,6 +341,7 @@ pub fn op_webgpu_render_pass_set_pipeline(
   #[smi] render_pass_rid: ResourceId,
   pipeline: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pipeline_resource =
     state
       .resource_table
@@ -355,6 +368,7 @@ pub fn op_webgpu_render_pass_set_index_buffer(
   #[number] offset: u64,
   #[number] size: Option<u64>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(buffer)?;
@@ -391,6 +405,7 @@ pub fn op_webgpu_render_pass_set_vertex_buffer(
   #[number] offset: u64,
   #[number] size: Option<u64>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(buffer)?;
@@ -428,6 +443,7 @@ pub fn op_webgpu_render_pass_draw(
   first_vertex: u32,
   first_instance: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -454,6 +470,7 @@ pub fn op_webgpu_render_pass_draw_indexed(
   base_vertex: i32,
   first_instance: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pass_resource = state
     .resource_table
     .get::<WebGpuRenderPass>(render_pass_rid)?;
@@ -502,6 +519,7 @@ pub fn op_webgpu_render_pass_draw_indexed_indirect(
   indirect_buffer: u32,
   #[number] indirect_offset: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(indirect_buffer)?;

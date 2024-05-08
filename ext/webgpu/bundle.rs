@@ -55,6 +55,7 @@ pub fn op_webgpu_create_render_bundle_encoder(
   state: &mut OpState,
   #[serde] args: CreateRenderBundleEncoderArgs,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let device_resource = state
     .resource_table
     .get::<super::WebGpuDevice>(args.device_rid)?;
@@ -102,6 +103,7 @@ pub fn op_webgpu_render_bundle_encoder_finish(
   #[smi] render_bundle_encoder_rid: ResourceId,
   #[string] label: Cow<str>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -133,6 +135,7 @@ pub fn op_webgpu_render_bundle_encoder_set_bind_group(
   #[number] dynamic_offsets_data_start: usize,
   #[number] dynamic_offsets_data_length: usize,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let bind_group_resource =
     state
       .resource_table
@@ -173,6 +176,7 @@ pub fn op_webgpu_render_bundle_encoder_push_debug_group(
   #[smi] render_bundle_encoder_rid: ResourceId,
   #[string] group_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -197,6 +201,7 @@ pub fn op_webgpu_render_bundle_encoder_pop_debug_group(
   state: &mut OpState,
   #[smi] render_bundle_encoder_rid: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -216,6 +221,7 @@ pub fn op_webgpu_render_bundle_encoder_insert_debug_marker(
   #[smi] render_bundle_encoder_rid: ResourceId,
   #[string] marker_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -241,6 +247,7 @@ pub fn op_webgpu_render_bundle_encoder_set_pipeline(
   #[smi] render_bundle_encoder_rid: ResourceId,
   #[smi] pipeline: ResourceId,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_pipeline_resource =
     state
       .resource_table
@@ -268,6 +275,7 @@ pub fn op_webgpu_render_bundle_encoder_set_index_buffer(
   #[number] offset: u64,
   #[number] size: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(buffer)?;
@@ -298,6 +306,7 @@ pub fn op_webgpu_render_bundle_encoder_set_vertex_buffer(
   #[number] offset: u64,
   #[number] size: Option<u64>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(buffer)?;
@@ -335,6 +344,7 @@ pub fn op_webgpu_render_bundle_encoder_draw(
   first_vertex: u32,
   first_instance: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -362,6 +372,7 @@ pub fn op_webgpu_render_bundle_encoder_draw_indexed(
   base_vertex: i32,
   first_instance: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let render_bundle_encoder_resource =
     state
       .resource_table
@@ -387,6 +398,7 @@ pub fn op_webgpu_render_bundle_encoder_draw_indirect(
   #[smi] indirect_buffer: ResourceId,
   #[number] indirect_offset: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let buffer_resource = state
     .resource_table
     .get::<super::buffer::WebGpuBuffer>(indirect_buffer)?;

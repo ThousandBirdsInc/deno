@@ -52,6 +52,7 @@ pub fn op_webgpu_create_command_encoder(
   #[smi] device_rid: ResourceId,
   #[string] label: Cow<str>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let device_resource = state
     .resource_table
@@ -112,6 +113,7 @@ pub fn op_webgpu_command_encoder_begin_render_pass(
   #[smi] occlusion_query_set: Option<ResourceId>,
   #[serde] timestamp_writes: Option<GPURenderPassTimestampWrites>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let command_encoder_resource = state
     .resource_table
     .get::<WebGpuCommandEncoder>(command_encoder_rid)?;
@@ -245,6 +247,7 @@ pub fn op_webgpu_command_encoder_begin_compute_pass(
   #[string] label: Cow<str>,
   #[serde] timestamp_writes: Option<GPUComputePassTimestampWrites>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let command_encoder_resource = state
     .resource_table
     .get::<WebGpuCommandEncoder>(command_encoder_rid)?;
@@ -295,6 +298,7 @@ pub fn op_webgpu_command_encoder_copy_buffer_to_buffer(
   #[number] destination_offset: u64,
   #[number] size: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -347,6 +351,7 @@ pub fn op_webgpu_command_encoder_copy_buffer_to_texture(
   #[serde] destination: GpuImageCopyTexture,
   #[serde] copy_size: wgpu_types::Extent3d,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -392,6 +397,7 @@ pub fn op_webgpu_command_encoder_copy_texture_to_buffer(
   #[serde] destination: GpuImageCopyBuffer,
   #[serde] copy_size: wgpu_types::Extent3d,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -437,6 +443,7 @@ pub fn op_webgpu_command_encoder_copy_texture_to_texture(
   #[serde] destination: GpuImageCopyTexture,
   #[serde] copy_size: wgpu_types::Extent3d,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -480,6 +487,7 @@ pub fn op_webgpu_command_encoder_clear_buffer(
   #[number] offset: u64,
   #[number] size: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -504,6 +512,7 @@ pub fn op_webgpu_command_encoder_push_debug_group(
   #[smi] command_encoder_rid: ResourceId,
   #[string] group_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -535,6 +544,7 @@ pub fn op_webgpu_command_encoder_insert_debug_marker(
   #[smi] command_encoder_rid: ResourceId,
   #[string] marker_label: &str,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -555,6 +565,7 @@ pub fn op_webgpu_command_encoder_write_timestamp(
   #[smi] query_set: ResourceId,
   query_index: u32,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -582,6 +593,7 @@ pub fn op_webgpu_command_encoder_resolve_query_set(
   #[smi] destination: ResourceId,
   #[number] destination_offset: u64,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let instance = state.borrow::<super::Instance>();
   let command_encoder_resource = state
     .resource_table
@@ -611,6 +623,7 @@ pub fn op_webgpu_command_encoder_finish(
   #[smi] command_encoder_rid: ResourceId,
   #[string] label: Cow<str>,
 ) -> Result<WebGpuResult, AnyError> {
+  unreachable!("unreach");
   let command_encoder_resource = state
     .resource_table
     .take::<WebGpuCommandEncoder>(command_encoder_rid)?;

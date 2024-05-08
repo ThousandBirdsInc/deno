@@ -17,32 +17,33 @@ pub fn op_webgpu_surface_create(
   p1: *const c_void,
   p2: *const c_void,
 ) -> Result<ResourceId, AnyError> {
-  let instance = state.borrow::<super::Instance>();
-  // Security note:
+  // let instance = state.borrow::<super::Instance>();
+  // // Security note:
+  // //
+  // // The `p1` and `p2` parameters are pointers to platform-specific window
+  // // handles.
+  // //
+  // // The code below works under the assumption that:
+  // //
+  // // - handles can only be created by the FFI interface which
+  // // enforces --allow-ffi.
+  // //
+  // // - `*const c_void` deserizalizes null and v8::External.
+  // //
+  // // - Only FFI can export v8::External to user code.
+  // if p1.is_null() {
+  //   return Err(type_error("Invalid parameters"));
+  // }
   //
-  // The `p1` and `p2` parameters are pointers to platform-specific window
-  // handles.
+  // let (win_handle, display_handle) = raw_window(system, p1, p2)?;
+  // let surface =
+  //   instance.instance_create_surface(display_handle, win_handle, ());
   //
-  // The code below works under the assumption that:
-  //
-  // - handles can only be created by the FFI interface which
-  // enforces --allow-ffi.
-  //
-  // - `*const c_void` deserizalizes null and v8::External.
-  //
-  // - Only FFI can export v8::External to user code.
-  if p1.is_null() {
-    return Err(type_error("Invalid parameters"));
-  }
-
-  let (win_handle, display_handle) = raw_window(system, p1, p2)?;
-  let surface =
-    instance.instance_create_surface(display_handle, win_handle, ());
-
-  let rid = state
-    .resource_table
-    .add(WebGpuSurface(instance.clone(), surface));
-  Ok(rid)
+  // let rid = state
+  //   .resource_table
+  //   .add(WebGpuSurface(instance.clone(), surface));
+  // Ok(rid)
+  unreachable!("unreach");
 }
 
 type RawHandles = (
@@ -56,6 +57,7 @@ fn raw_window(
   ns_window: *const c_void,
   ns_view: *const c_void,
 ) -> Result<RawHandles, AnyError> {
+  unreachable!("unreach");
   if system != "cocoa" {
     return Err(type_error("Invalid system on macOS"));
   }
