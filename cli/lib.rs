@@ -6,6 +6,7 @@ pub mod emit;
 pub mod errors;
 pub mod factory;
 pub mod file_fetcher;
+pub mod graph_container;
 pub mod graph_util;
 pub mod http_util;
 pub mod js;
@@ -17,12 +18,16 @@ pub mod node;
 pub mod npm;
 pub mod ops;
 pub mod resolver;
+pub mod shared;
 pub mod standalone;
+pub mod task_runner;
 pub mod tools;
 pub mod tsc;
 pub mod util;
 pub mod version;
 pub mod worker;
+
+
 
 use crate::args::flags_from_vec;
 use crate::args::DenoSubcommand;
@@ -32,6 +37,7 @@ use crate::util::v8::get_v8_flags_from_env;
 use crate::util::v8::init_v8_flags;
 
 pub use deno_runtime::UNSTABLE_GRANULAR_FLAGS;
+pub use deno_runtime;
 
 use deno_core::anyhow::Context;
 use deno_core::error::AnyError;

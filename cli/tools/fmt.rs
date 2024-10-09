@@ -294,16 +294,7 @@ fn format_markdown(
             }
           }
           "yml" | "yaml" => {
-            if unstable_options.yaml {
-              pretty_yaml::format_text(
-                text,
-                &get_resolved_yaml_config(fmt_options),
-              )
-              .map(Some)
-              .map_err(AnyError::from)
-            } else {
-              Ok(None)
-            }
+            Ok(None)
           }
           _ => {
             let mut codeblock_config =
@@ -477,16 +468,7 @@ pub fn format_file(
       }
     }
     "yml" | "yaml" => {
-      if unstable_options.yaml {
-        pretty_yaml::format_text(
-          file_text,
-          &get_resolved_yaml_config(fmt_options),
-        )
-        .map(Some)
-        .map_err(AnyError::from)
-      } else {
-        Ok(None)
-      }
+      Ok(None)
     }
     "ipynb" => dprint_plugin_jupyter::format_text(
       file_text,
@@ -1004,40 +986,7 @@ fn get_resolved_markup_fmt_config(
   }
 }
 
-fn get_resolved_yaml_config(
-  options: &FmtOptionsConfig,
-) -> pretty_yaml::config::FormatOptions {
-  use pretty_yaml::config::*;
 
-  let layout_options = LayoutOptions {
-    print_width: options.line_width.unwrap_or(80) as usize,
-    use_tabs: options.use_tabs.unwrap_or_default(),
-    indent_width: options.indent_width.unwrap_or(2) as usize,
-    line_break: LineBreak::Lf,
-  };
-
-  let language_options = LanguageOptions {
-    quotes: if let Some(true) = options.single_quote {
-      Quotes::PreferSingle
-    } else {
-      Quotes::PreferDouble
-    },
-    trailing_comma: true,
-    format_comments: false,
-    indent_block_sequence_in_map: true,
-    brace_spacing: true,
-    bracket_spacing: false,
-    dash_spacing: DashSpacing::OneSpace,
-    trim_trailing_whitespaces: true,
-    trim_trailing_zero: false,
-    ignore_comment_directive: "deno-fmt-ignore".into(),
-  };
-
-  FormatOptions {
-    layout: layout_options,
-    language: language_options,
-  }
-}
 
 struct FileContents {
   text: String,

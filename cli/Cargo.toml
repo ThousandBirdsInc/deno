@@ -11,6 +11,13 @@ license.workspace = true
 repository.workspace = true
 description = "Provides the deno executable"
 
+[lib]
+name = "deno"
+crate-type = ["cdylib", "lib"]
+path = "lib.rs"
+bench = false
+
+
 [[bin]]
 name = "deno"
 path = "main.rs"
@@ -135,7 +142,6 @@ p256.workspace = true
 pathdiff = "0.2.1"
 percent-encoding.workspace = true
 phf.workspace = true
-pretty_yaml = "=0.4.0"
 quick-junit = "^0.3.5"
 rand = { workspace = true, features = ["small_rng"] }
 regex.workspace = true
